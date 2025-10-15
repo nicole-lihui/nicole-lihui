@@ -1,0 +1,33 @@
+name: Generate Snake
+
+on:
+  schedule:
+    # 每天UTC时间0点运行（北京时间上午8点）
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: Platane/snk@v3
+        id: snake-gif
+        with:
+          github_user_name: nicole-lihui
+          gif_out_path: ./assets/github-contributions.gif
+          svg_out_path: ./assets/github-contributions.svg
+      - uses: Platane/snk@v3
+        id: snake-svg
+        with:
+          github_user_name: nicole-lihui
+          svg_out_path: ./output/github-contribution-grid-snake.svg
+      - name: push to origin
+        run: |
+          git config --global user.name "GitHub Snake"
+          git config --global user.email "github-snake@users.noreply.github.com"
+          git add .
+          git commit -m "Generate Snake"
+          git push
