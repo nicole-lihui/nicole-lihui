@@ -21,6 +21,3 @@
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Istio](https://img.shields.io/badge/Istio-466BB0?style=for-the-badge&logo=istio&logoColor=white)
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/nicole-lihui/nicole-lihui/output/github-contribution-grid-snake.svg" alt="Snake animation" />
-</div>
